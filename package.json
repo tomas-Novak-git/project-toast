@@ -25,5 +25,10 @@
   "browserslist": "> 0.5%, last 2 versions, not dead",
   "staticFiles": {
     "staticPath": "assets"
+  },
+  "devDependencies": {
+    "assert": "^2.1.0",
+    "console-browserify": "^1.2.0",
+    "util": "^0.12.5"
   }
 }
