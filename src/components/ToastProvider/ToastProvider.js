@@ -1,5 +1,5 @@
 import React from 'react';
-
+import handleKeyDown from '../../hooks/useEscapeHook';
 export const ToastContext = React.createContext();
 
 function ToastProvider({children}) {
@@ -16,6 +16,14 @@ function ToastProvider({children}) {
     ]
     setToastContent(nextToasts);
   }
+
+const handleEscape = React.useCallback(() => {
+  setToastContent([]);
+}, [])
+
+handleKeyDown('Escape', handleEscape);
+
+
 
     function handleDismiss(id) {
     const nextToasts = toastContent.filter((toast) => {
